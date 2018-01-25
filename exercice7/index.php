@@ -11,12 +11,12 @@
       <?php
       // Connexion à la base de donnée.
       try {
-          $bdd = new PDO('mysql:host=localhost;dbname=colyseum;charset=utf8;', 'root', 'victorien');
+          $bdd = new PDO('mysql:host=localhost;dbname=colyseum;charset=utf8;', 'usr_pdo1', 'pdo1');
           $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       } catch (Exception $ex) {
           die('Erreur : ' . $ex->getMessage());
       }
-      $reqClients = 'SELECT lastName, firstName, DATE_FORMAT(birthDate,\'%d/%m/%Y\')AS birthDate, REPLACE(REPLACE(card, 1, \'OUI\'), 0, \'NON\') AS card, cardNumber FROM clients';
+      $reqClients = 'SELECT lastName, firstName, DATE_FORMAT(birthDate,\'%d/%m/%Y\')AS birthDate, CASE WHEN `card` = 1 THEN \'Oui\' WHEN `card` = 0 THEN \'Non\' END AS card, cardNumber FROM clients';
       $clients = $bdd->query($reqClients);
       $result = $clients->fetchAll(PDO::FETCH_OBJ);
       foreach ($result as $showClientsList) {

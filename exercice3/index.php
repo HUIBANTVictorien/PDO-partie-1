@@ -11,7 +11,7 @@
       <?php
       // Connexion à la base de donnée.
       try {
-          $bdd = new PDO('mysql:host=localhost;dbname=colyseum;charset=utf8;', 'root', 'victorien');
+          $bdd = new PDO('mysql:host=localhost;dbname=colyseum;charset=utf8;', 'usr_pdo1', 'pdo1');
       } catch (Exception $ex) {
           die('Erreur : ' . $ex->getMessage());
       }

@@ -9,6 +9,7 @@
   </head>
   <body>
     <a href="exercice1/index.php">Exercice 1</a><br />
+    <a href="exercice1/correction.php">Correction exercice 1</a><br />
     <a href="exercice2/index.php">Exercice 2</a><br />
     <a href="exercice3/index.php">Exercice 3</a><br />
     <a href="exercice4/index.php">Exercice 4</a><br />
